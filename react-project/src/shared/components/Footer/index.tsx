@@ -1,6 +1,26 @@
+import FooterListPart from '../FooterListPart';
 import './style.css'
 
 const Footer = () => {
+
+  const companyLinks = [
+    { name: 'About Us', href: '/' },
+    { name: 'Delivery Information', href: '/' },
+    { name: 'Privacy Policy', href: '/' },
+    { name: 'Terms & Conditions', href: '/' },
+    { name: 'Contact Us', href: '/' },
+    { name: 'Support Center', href: '/' },
+  ];
+
+  const categoryLinks = [
+    { name: 'Dairy & Bakery', href: '/' },
+    { name: 'Fruits & Vegetable', href: '/' },
+    { name: 'Snack & Spice', href: '/' },
+    { name: 'Juice & Drinks', href: '/' },
+    { name: 'Chicken & Meat', href: '/' },
+    { name: 'Fast Food', href: '/' },
+  ];
+
   return (
     <footer className="footer">
       <div className="container footer-content">
@@ -30,30 +50,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-col">
-          <h3>Company</h3>
-
-          <ul>
-            <li>About Us</li>
-            <li>Delivery Information</li>
-            <li>Privacy Policy</li>
-            <li>Terms & Conditions</li>
-            <li>Contact Us</li>
-            <li>Support Center</li>
-          </ul>
-        </div>
-        <div className="footer-col">
-          <h3>Category</h3>
-
-          <ul>
-            <li>Dairy & Bakery</li>
-            <li>Fruits & Vegetable</li>
-            <li>Snack & Spice</li>
-            <li>Juice & Drinks</li>
-            <li>Chicken & Meat</li>
-            <li>Fast Food</li>
-          </ul>
-        </div>
+        <FooterListPart title="Company" links={companyLinks} />
+        <FooterListPart title="Category" links={categoryLinks} />
 
         <div className="footer-col">
           <h3>Subscribe Our Newsletter</h3>
