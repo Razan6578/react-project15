@@ -12,7 +12,10 @@ export type Product = {
   longDescription: string;
   dietType: DietType;
   mainImage: string;
-  images: string[];
+  images: {
+    id: number
+    image: string
+  }[]
   brandId: number;
   brandName: string;
   rating: number;

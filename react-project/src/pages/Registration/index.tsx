@@ -1,7 +1,9 @@
 import PageLayout from "../../shared/layouts/PageLayout";
+import { useNavigate } from 'react-router-dom';
 
 const Registration = () =>{
-   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  const navigate = useNavigate();
+  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
   const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -43,6 +45,7 @@ const Registration = () =>{
     }
 
     localStorage.setItem('user', JSON.stringify({ email, phone, password }));
+    navigate('/');
   };
 
 

@@ -7,6 +7,7 @@ import Blogs from "../../pages/Blogs";
 import Login from "../../pages/Login";
 import Product from "../../pages/Product";
 import Registration from "../../pages/Registration";
+import FAQ from "../../pages/FAQ";
 
 export const router = createBrowserRouter([
   {
@@ -40,5 +41,9 @@ export const router = createBrowserRouter([
   {
     path: "/registration",
     Component: Registration,
-  }
+  },
+  {
+    path: "/faq",
+    Component: FAQ,
+  },
 ]);

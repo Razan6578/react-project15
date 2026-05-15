@@ -40,7 +40,7 @@ const Header = () =>{
           </div>
 
           <div className="actions">
-            <span style={{color:'black'}}>Account</span>
+            <a href='/registration'><span style={{color:'black'}}>Account</span></a>
             <span style={{color:'black'}}>Wishlist</span>
             <span style={{color:'black'}}>Cart</span>
           </div>
