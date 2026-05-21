@@ -1,5 +1,6 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import './style.css'
 
 export type BasePageLayoutType = {
     children: React.ReactNode;
@@ -7,11 +8,13 @@ export type BasePageLayoutType = {
 
 const BasePageLayout = ({ children }: BasePageLayoutType) =>{
   return (
-    <>
+    <div className="page">
       <Header />
-      {children}
+      <div className="main">
+        {children}        
+      </div>
       <Footer />
-    </>
+    </div>
   )
 };
 

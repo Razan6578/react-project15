@@ -5,7 +5,7 @@ const Registration = () =>{
   const navigate = useNavigate();
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-  const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     
@@ -44,8 +44,39 @@ const Registration = () =>{
       return;
     }
 
-    localStorage.setItem('user', JSON.stringify({ email, phone, password }));
-    navigate('/');
+    try {
+      const response = await fetch(
+        'http://127.0.0.1:8000/api/register/',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+
+          body: JSON.stringify({
+            phone_number: phone,
+            email: email,
+            password: password,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      console.log(data);
+
+      if (response.ok) {
+        alert('Registration successful');
+        navigate('/');
+      } else {
+        alert('Registration error');
+        console.log(data);
+      }
+
+    } catch (error) {
+      console.log(error);
+      alert('Server error');
+    }
   };
 
 
